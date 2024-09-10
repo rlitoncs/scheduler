@@ -1,4 +1,5 @@
 import Form from "components/Appointment/Form";
+import Application from "components/Application";
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 
@@ -13,12 +14,16 @@ describe("Form", () => {
     }
   ];
 
-  it("renders without student name if not provided", () => {
-  
-    const { getByPlaceholderText } = render(<Form interviewers={interviewers}/>);
+  it("defaults to Monday and changes the schedule when a new day is selected", () => {
+    const { findByText, queryByText } = render(<Application />);
 
-    expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");
+    return findByText("Monday")
+      .then(() => {
+        fireEvent.click(queryByText("Tuesday"));
+        expect(queryByText("Leopold Silvers")).toBeInTheDocument();
+      })
   });
+  
 
   it("renders with initial student name", () => {
     const { getByTestId } = render(<Form interviewers={interviewers} name="Lydia Miller-Jones"/>)
