@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,47 +81,47 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function <span class="fstat-no" title="function not covered" >getAppointmentsForDay(</span>state, day) {
-  const found = <span class="cstat-no" title="statement not covered" >state.days.find(<span class="fstat-no" title="function not covered" >d </span>=&gt; <span class="cstat-no" title="statement not covered" >day === d.name)</span>;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function getAppointmentsForDay(state, day) {
+  const found = state.days.find(d =&gt; day === d.name);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (state.days.length === 0 || found === undefined) <span class="cstat-no" title="statement not covered" >return [];</span></span>
+  if (state.days.length === 0 || found === undefined) return [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return found.appointments.map(<span class="fstat-no" title="function not covered" >id</span> =&gt; <span class="cstat-no" title="statement not covered" >state.appointments[id])</span>;</span>
+  return found.appointments.map(id =&gt; state.appointments[id]);
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >getInterviewersForDay(</span>state, day) {
-  const found = <span class="cstat-no" title="statement not covered" >state.days.find(<span class="fstat-no" title="function not covered" >d </span>=&gt; <span class="cstat-no" title="statement not covered" >day === d.name)</span>;</span>
+export function getInterviewersForDay(state, day) {
+  const found = state.days.find(d =&gt; day === d.name);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (state.days.length === 0 || found === undefined) <span class="cstat-no" title="statement not covered" >return [];</span></span>
+  if (state.days.length === 0 || found === undefined) return [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return found.interviewers.map(<span class="fstat-no" title="function not covered" >id</span> =&gt; <span class="cstat-no" title="statement not covered" >state.interviewers[id])</span>;</span>
+  return found.interviewers.map(id =&gt; state.interviewers[id]);
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >getInterview(</span>state, interview) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+export function getInterview(state, interview) {
+  return (
     interview &amp;&amp; {
       ...interview,
       interviewer: state.interviewers[interview.interviewer]
@@ -135,7 +135,7 @@ export function <span class="fstat-no" title="function not covered" >getIntervie
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 10 2024 09:21:57 GMT-0400 (Eastern Daylight Saving Time)
+                at Wed Sep 11 2024 05:20:32 GMT-0400 (Eastern Daylight Saving Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

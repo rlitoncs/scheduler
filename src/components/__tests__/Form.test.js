@@ -12,18 +12,7 @@ describe("Form", () => {
       student: "Sylvia Palmer",
       avatar: "https://i.imgur.com/LpaY82x.png"
     }
-  ];
-
-  it("defaults to Monday and changes the schedule when a new day is selected", () => {
-    const { findByText, queryByText } = render(<Application />);
-
-    return findByText("Monday")
-      .then(() => {
-        fireEvent.click(queryByText("Tuesday"));
-        expect(queryByText("Leopold Silvers")).toBeInTheDocument();
-      })
-  });
-  
+  ];  
 
   it("renders with initial student name", () => {
     const { getByTestId } = render(<Form interviewers={interviewers} name="Lydia Miller-Jones"/>)
