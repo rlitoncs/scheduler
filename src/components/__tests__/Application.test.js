@@ -17,14 +17,9 @@ describe("Application", () => {
     
     await findByText(container, "Archie Cohen");
 
-    // console.log(prettyDOM(container));
-
     const appointments = getAllByTestId(container, "appointment"); // returns an array
 
-    // console.log(prettyDOM(appointments));
     const appointment = appointments[0];
-
-    // console.log(prettyDOM(appointment));
 
     fireEvent.click(getByAltText(appointment, "Add"));
 
@@ -32,24 +27,14 @@ describe("Application", () => {
       target: { value: "Lydia Miller-Jones"}
     })
 
-
     fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
     fireEvent.click(getByText(appointment, "Save"));
 
-
-    // expect(getByText(appointment, /Saving/i)).toBeInTheDocument();
-    // console.log(prettyDOM(appointment));
-
     await findByText(appointment, "Lydia Miller-Jones");  
 
-    // debug(appointment);
-
     const day = getAllByTestId(container, "day").find(day => queryByText(day, "Monday"))
-    // debug(day);
 
     expect(getByText(day, "no spots remaining")).toBeInTheDocument();
-
-
 
   })
 })
